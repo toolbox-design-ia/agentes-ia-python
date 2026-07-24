@@ -1,10 +1,6 @@
-# Fragmentos no autocontenidos — 01 · Qué es un agente de IA: del chat que responde al sistema que actúa
+# El bucle percepcion-razonamiento-accion (diagrama del capitulo 1)
 
-Estos bloques del libro forman parte de archivos mayores o son extractos; se listan aqui como referencia fiel a lo impreso.
-
-## El bucle percepción-razonamiento-acción
-
-```python
+```text
 Objetivo
     ↓
 Percepción  →  leer instrucciones, archivos, estado, resultados anteriores
