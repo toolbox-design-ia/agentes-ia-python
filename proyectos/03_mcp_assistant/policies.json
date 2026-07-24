@@ -1,0 +1,4 @@
+{
+  "require_confirmation": ["save_memory", "add_task", "complete_task",
+                            "read_file"]
+}

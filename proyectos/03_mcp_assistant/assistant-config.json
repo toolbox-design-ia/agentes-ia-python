@@ -1,0 +1,19 @@
+{
+  "servers": [
+    {
+      "name": "memory",
+      "command": ["python", "memory-server.py"],
+      "env": { "ASSISTANT_DB": "assistant.db" }
+    },
+    {
+      "name": "files",
+      "command": ["python", "files-server.py"],
+      "env": { "NOTES_DIR": "notes" }
+    },
+    {
+      "name": "tasks",
+      "command": ["python", "tasks-server.py"],
+      "env": { "ASSISTANT_DB": "assistant.db" }
+    }
+  ]
+}
