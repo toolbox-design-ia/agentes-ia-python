@@ -1,5 +1,5 @@
 from agents import Agent
-from agents.tools import WebSearchTool, CodeInterpreterTool, FileSearchTool
+from agents import WebSearchTool, CodeInterpreterTool, FileSearchTool
 
 agente_investigador = Agent(
     name="Investigador editorial",

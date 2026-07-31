@@ -1,6 +1,6 @@
 from google.adk import Agent
 
-asistente = Agent(
+root_agent = Agent(
     name="asistente_proyecto",
     model="gemini-3.5-flash",
     instruction="""Eres un asistente de gestión de proyectos.

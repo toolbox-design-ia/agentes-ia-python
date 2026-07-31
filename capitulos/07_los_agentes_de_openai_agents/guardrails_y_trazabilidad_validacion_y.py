@@ -9,7 +9,7 @@ async def verificar_alcance_editorial(ctx, agente, input):
             tripwire_triggered=True,
             output_info="Petición fuera del alcance del sistema editorial."
         )
-    return GuardrailFunctionOutput(tripwire_triggered=False)
+    return GuardrailFunctionOutput(output_info=None, tripwire_triggered=False)
 
 asistente_protegido = Agent(
     name="Asistente editorial protegido",

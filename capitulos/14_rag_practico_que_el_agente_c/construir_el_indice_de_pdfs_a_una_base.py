@@ -7,7 +7,7 @@ from openai import OpenAI
 # ── Configuración ──────────────────────────────────────────────
 CARPETA_DOCUMENTOS = "documentos"
 TAMANO_CHUNK = 700        # tokens por fragmento
-SOLAPAMIENTO_CHARS = 200  # caracteres de solapamiento entre chunks
+SOLAPAMIENTO_TOKENS = 100  # tokens de solapamiento entre chunks (~14 %)
 MODELO_EMBEDDINGS = "text-embedding-3-small"
 
 # Clientes: OpenAI para embeddings, ChromaDB para el índice local
@@ -30,17 +30,14 @@ def trocear_texto(texto, nombre_archivo, numero_pagina):
     Cada chunk incluye un solapamiento con el anterior para
     no perder contexto en los cortes.
     """
+    # Se tokeniza la pagina una sola vez y se corta por indices de token
+    tokens = tokenizer.encode(texto)
+    paso = TAMANO_CHUNK - SOLAPAMIENTO_TOKENS
     chunks = []
-    inicio = 0
     indice_chunk = 0
 
-    while inicio < len(texto):
-        # Avanza carácter a carácter hasta alcanzar TAMANO_CHUNK tokens
-        fin = inicio
-        while fin < len(texto) and contar_tokens(texto[inicio:fin]) < TAMANO_CHUNK:
-            fin += 1
-
-        fragmento = texto[inicio:fin].strip()
+    for inicio in range(0, len(tokens), paso):
+        fragmento = tokenizer.decode(tokens[inicio:inicio + TAMANO_CHUNK]).strip()
         if fragmento:
             chunks.append({
                 "texto": fragmento,
@@ -50,12 +47,8 @@ def trocear_texto(texto, nombre_archivo, numero_pagina):
             })
             indice_chunk += 1
 
-        if fin >= len(texto):
+        if inicio + TAMANO_CHUNK >= len(tokens):
             break
-
-        # El siguiente chunk empieza SOLAPAMIENTO_CHARS antes del final
-        # para que los bordes del corte queden cubiertos
-        inicio = max(inicio + 1, fin - SOLAPAMIENTO_CHARS)
 
     return chunks
 

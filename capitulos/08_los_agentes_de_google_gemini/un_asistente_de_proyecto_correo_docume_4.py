@@ -5,7 +5,7 @@ from tools.gmail_tools import buscar_correos_gmail
 from tools.drive_tools import buscar_en_drive
 from tools.calendar_tools import consultar_agenda
 
-asistente = Agent(
+root_agent = Agent(
     name="asistente_proyecto",
     model="gemini-3.5-flash",
     instruction="""Eres un asistente de coordinación de proyectos con acceso a
@@ -31,7 +31,7 @@ asistente = Agent(
 
 session_service = InMemorySessionService()
 runner = Runner(
-    agent=asistente,
+    agent=root_agent,
     app_name="asistente_proyecto",
     session_service=session_service
 )

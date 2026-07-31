@@ -5,13 +5,19 @@ def buscar_web_alojada_anthropic(subpregunta: str) -> list[dict]:
         tools=[{"type": "web_search_20250305", "name": "web_search"}],
         messages=[{"role": "user", "content": subpregunta}],
     )
+    resumen = "".join(
+        b.text for b in respuesta.content if b.type == "text"
+    )[:800]
+
     resultados = []
     for bloque in respuesta.content:
-        if bloque.type == "tool_result":
+        # El bloque es web_search_tool_result y sus elementos son
+        # objetos con atributos, no diccionarios
+        if bloque.type == "web_search_tool_result":
             for item in bloque.content:
                 resultados.append({
-                    "url": item.get("url", ""),
-                    "title": item.get("title", ""),
-                    "snippet": item.get("encrypted_content", "")[:800],
+                    "url": item.url,
+                    "title": item.title,
+                    "snippet": resumen,
                 })
     return resultados

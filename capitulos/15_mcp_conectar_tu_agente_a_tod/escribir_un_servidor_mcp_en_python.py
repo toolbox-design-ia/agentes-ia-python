@@ -1,6 +1,6 @@
-from mcp.server.fastmcp import FastMCP
+from mcp.server import MCPServer
 
-mcp = FastMCP("calculadora")
+mcp = MCPServer("calculadora")
 
 @mcp.tool()
 def sumar(a: float, b: float) -> float:

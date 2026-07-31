@@ -2,10 +2,10 @@
 import os
 import sqlite3
 
-from mcp.server.fastmcp import FastMCP
+from mcp.server import MCPServer
 
 DB_PATH = os.getenv("ASSISTANT_DB", "assistant.db")
-mcp = FastMCP("tasks")
+mcp = MCPServer("tasks")
 
 
 @mcp.tool()

@@ -1,8 +1,8 @@
-from mcp.server.fastmcp import FastMCP
+from mcp.server import MCPServer
 import sqlite3, os
 
 DB_PATH = os.getenv("ASSISTANT_DB", "assistant.db")
-mcp = FastMCP("memory-server")
+mcp = MCPServer("memory-server")
 
 @mcp.tool()
 def save_memory(key: str, value: str, category: str = "general") -> str:

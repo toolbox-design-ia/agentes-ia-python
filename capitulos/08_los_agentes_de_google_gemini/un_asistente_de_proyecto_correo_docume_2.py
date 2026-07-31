@@ -23,7 +23,9 @@ def buscar_en_drive(
         "pdf":            "application/pdf",
     }
 
-    query = f"(name contains '{termino}' or fullText contains '{termino}')"
+    # Las comillas simples del termino romperian la consulta
+    seguro = termino.replace("\\", "\\\\").replace("'", "\\'")
+    query = f"(name contains '{seguro}' or fullText contains '{seguro}')"
     if tipo_archivo in mime_types:
         query += f" and mimeType='{mime_types[tipo_archivo]}'"
 

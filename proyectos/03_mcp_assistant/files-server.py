@@ -5,10 +5,10 @@ Solo lee dentro de la carpeta autorizada (NOTES_DIR); nunca escribe.
 import os
 from pathlib import Path
 
-from mcp.server.fastmcp import FastMCP
+from mcp.server import MCPServer
 
 NOTES_DIR = Path(os.getenv("NOTES_DIR", "notes")).resolve()
-mcp = FastMCP("files")
+mcp = MCPServer("files")
 
 
 def _safe(path: str) -> Path:

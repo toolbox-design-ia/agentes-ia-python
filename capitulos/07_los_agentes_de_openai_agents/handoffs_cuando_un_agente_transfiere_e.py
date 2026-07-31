@@ -1,5 +1,5 @@
 from agents import Agent
-from agents.tools import WebSearchTool
+from agents import WebSearchTool
 
 agente_redaccion = Agent(
     name="Especialista en redacción",

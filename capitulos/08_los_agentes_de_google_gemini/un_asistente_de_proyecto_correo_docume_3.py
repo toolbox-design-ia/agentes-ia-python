@@ -15,13 +15,13 @@ def consultar_agenda(
     creds = obtener_credenciales()
     service = build("calendar", "v3", credentials=creds)
 
-    def _asegurar_z(ts: str) -> str:
-        return ts if ts.endswith("Z") else ts + "Z"
-
+    # Las marcas sin zona se interpretan en la zona de timeZone;
+    # anadir una "Z" a una hora local la declararia UTC por error.
     eventos = service.events().list(
         calendarId="primary",
-        timeMin=_asegurar_z(fecha_inicio),
-        timeMax=_asegurar_z(fecha_fin),
+        timeMin=fecha_inicio,
+        timeMax=fecha_fin,
+        timeZone="Europe/Madrid",
         singleEvents=True,
         orderBy="startTime"
     ).execute()
