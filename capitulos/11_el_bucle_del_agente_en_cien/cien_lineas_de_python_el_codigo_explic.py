@@ -70,7 +70,7 @@ def run_agent(user_request: str, max_steps: int = 10) -> str:
 
     for step in range(1, max_steps + 1):
         response = client.messages.create(
-            model="claude-opus-4-8",
+            model="claude-sonnet-5",
             max_tokens=4096,
             system=SYSTEM_PROMPT,
             tools=TOOLS,

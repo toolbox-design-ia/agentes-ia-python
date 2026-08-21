@@ -3,7 +3,7 @@ cliente_oai = OpenAI()
 
 def buscar_web_alojada_openai(subpregunta: str) -> list[dict]:
     respuesta = cliente_oai.responses.create(
-        model="gpt-4o",
+        model="gpt-5.6-sol",
         tools=[{"type": "web_search"}],
         input=subpregunta,
     )

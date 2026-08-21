@@ -3,7 +3,7 @@ from google import genai
 cliente = genai.Client()    # lee GOOGLE_API_KEY del entorno
 
 respuesta = cliente.models.generate_content(
-    model="gemini-2.5-flash",
+    model="gemini-3.5-flash",
     contents=(
         "Explica en tres frases qué hace un agente de IA "
         "cuando usa una herramienta."

@@ -14,6 +14,6 @@ async def verificar_alcance_editorial(ctx, agente, input):
 asistente_protegido = Agent(
     name="Asistente editorial protegido",
     instructions="Asistes en tareas editoriales: investigación, redacción y revisión.",
-    model="gpt-4o",
+    model="gpt-5.6-sol",
     input_guardrails=[verificar_alcance_editorial],
 )

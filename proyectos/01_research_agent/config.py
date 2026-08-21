@@ -7,9 +7,9 @@ ESPECIFICACION = {
     "max_subpreguntas": 5,
     "max_fuentes_por_subpregunta": 3,
     "min_evidencias_por_subpregunta": 2,
-    "modelo_planificador": "claude-opus-4-8",
+    "modelo_planificador": "claude-opus-5",
     "modelo_extractor": "claude-haiku-4-5",
-    "modelo_redactor": "claude-opus-4-8",
+    "modelo_redactor": "claude-opus-5",
     "max_caracteres_pagina": 4000,
     "informe_salida": "informe.md",
 }

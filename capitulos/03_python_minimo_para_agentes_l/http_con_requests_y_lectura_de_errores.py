@@ -7,7 +7,7 @@ headers = {
     "content-type": "application/json"
 }
 payload = {
-    "model": "claude-sonnet-4-5",
+    "model": "claude-sonnet-5",
     "max_tokens": 256,
     "messages": [{"role": "user", "content": "¿Qué es un agente de IA?"}]
 }

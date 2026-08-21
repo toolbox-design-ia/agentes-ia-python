@@ -15,7 +15,7 @@ def bucle_agente(pregunta_usuario):
 
     while True:
         respuesta = cliente.messages.create(
-            model="claude-opus-4-8",
+            model="claude-sonnet-5",
             max_tokens=4096,
             tools=[buscar_archivos],
             messages=mensajes

@@ -5,7 +5,7 @@ cliente = anthropic.Anthropic()
 
 def planificar(pregunta: str) -> list[str]:
     respuesta = cliente.messages.create(
-        model="claude-opus-4-8",
+        model="claude-opus-5",
         max_tokens=512,
         system=(
             "Descompón la pregunta en 3-5 subpreguntas concretas y necesarias "
