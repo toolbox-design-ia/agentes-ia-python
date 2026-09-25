@@ -2,7 +2,7 @@
 
 # Agentes de IA con Python — Código del libro
 
-Repositorio companion de **«Agentes de IA con Python»** (Henry Ramírez Reyes, serie INTELIGENCIA ARTIFICIAL, Studio35).
+Repositorio companion de **«Agentes de IA con Python»** (Henry Ramírez Reyes, serie INTELIGENCIA ARTIFICIAL, Toolbox Design).
 
 El código está organizado por capítulo en `capitulos/` y los tres proyectos completos en `proyectos/`. El Anexo A del libro explica, paso a paso y sin experiencia previa, cómo descargar este repositorio, crear el entorno y configurar las claves de API con límite de gasto.
 

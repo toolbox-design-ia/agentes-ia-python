@@ -2,7 +2,7 @@
 
 # AI Agents with Python — Book code
 
-Companion repository for **"Agentes de IA con Python"** (Henry Ramírez Reyes, Studio35).
+Companion repository for **"Agentes de IA con Python"** (Henry Ramírez Reyes, Toolbox Design).
 
 Code organized by chapter under `capitulos/`, with the three full projects under `proyectos/`. Annex A of the book walks through downloading this repository, creating the environment and setting up API keys with a spending cap — no prior experience assumed.
 
